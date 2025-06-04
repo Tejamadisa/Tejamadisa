@@ -3,169 +3,61 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Lion Holding Cub</title>
+<title>Realistic Lion Holding Cub SVG Animation</title>
 <style>
   body {
-    background: #f0e4d7;
+    background: #f5f3f0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
+  }
+  svg {
+    width: 400px;
+    height: auto;
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
   }
 
-  .lion {
-    position: relative;
-    width: 200px;
-    height: 180px;
+  /* Breathing animation */
+  .breath {
+    transform-origin: center center;
+    animation: breathe 3s ease-in-out infinite;
   }
 
-  /* Lion's body */
-  .lion-body {
-    position: absolute;
-    bottom: 0;
-    left: 50px;
-    width: 100px;
-    height: 120px;
-    background: #d49f3f;
-    border-radius: 60px 60px 40px 40px;
-    box-shadow: inset 0 10px 0 #b3771e;
-  }
-
-  /* Lion's mane */
-  .lion-mane {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 180px;
-    height: 180px;
-    background: radial-gradient(circle at center, #c97f29 50%, #874f11 100%);
-    border-radius: 50%;
-    z-index: 1;
-  }
-
-  /* Lion's face */
-  .lion-face {
-    position: absolute;
-    top: 30px;
-    left: 40px;
-    width: 100px;
-    height: 100px;
-    background: #f9d76e;
-    border-radius: 50%;
-    z-index: 2;
-    box-shadow: inset 0 6px 0 #d9b64c;
-  }
-
-  /* Eyes */
-  .eye {
-    position: absolute;
-    top: 50px;
-    width: 20px;
-    height: 20px;
-    background: #442c0e;
-    border-radius: 50%;
-  }
-  .eye.left {
-    left: 55px;
-  }
-  .eye.right {
-    left: 95px;
-  }
-
-  /* Nose */
-  .nose {
-    position: absolute;
-    top: 80px;
-    left: 82px;
-    width: 15px;
-    height: 10px;
-    background: #7b4c1b;
-    border-radius: 40% 40% 60% 60%;
-  }
-
-  /* Mouth */
-  .mouth {
-    position: absolute;
-    top: 90px;
-    left: 75px;
-    width: 30px;
-    height: 15px;
-    border-bottom: 3px solid #7b4c1b;
-    border-radius: 0 0 30px 30px;
-  }
-
-  /* Cub */
-  .cub {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    width: 70px;
-    height: 70px;
-    background: #f0b94d;
-    border-radius: 50% 50% 40% 40%;
-    box-shadow: inset 0 6px 0 #c98c1f;
-    z-index: 3;
-  }
-
-  /* Cub's face */
-  .cub-face {
-    position: absolute;
-    top: 15px;
-    left: 10px;
-    width: 50px;
-    height: 50px;
-    background: #f9d76e;
-    border-radius: 50%;
-    box-shadow: inset 0 4px 0 #d9b64c;
-  }
-
-  /* Cub eyes */
-  .cub-eye {
-    position: absolute;
-    top: 30px;
-    width: 10px;
-    height: 10px;
-    background: #442c0e;
-    border-radius: 50%;
-  }
-  .cub-eye.left {
-    left: 20px;
-  }
-  .cub-eye.right {
-    left: 40px;
-  }
-
-  /* Cub nose */
-  .cub-nose {
-    position: absolute;
-    top: 45px;
-    left: 32px;
-    width: 8px;
-    height: 5px;
-    background: #7b4c1b;
-    border-radius: 40% 40% 60% 60%;
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
   }
 </style>
 </head>
 <body>
 
-<div class="lion">
-  <div class="lion-mane"></div>
-  <div class="lion-body"></div>
-  <div class="lion-face">
-    <div class="eye left"></div>
-    <div class="eye right"></div>
-    <div class="nose"></div>
-    <div class="mouth"></div>
-  </div>
-  <div class="cub">
-    <div class="cub-face">
-      <div class="cub-eye left"></div>
-      <div class="cub-eye right"></div>
-      <div class="cub-nose"></div>
-    </div>
-  </div>
-</div>
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" class="breath" aria-label="Lion holding a cub">
+  <!-- Mane -->
+  <circle cx="300" cy="200" r="140" fill="#c97f29"/>
+  <!-- Lion body -->
+  <ellipse cx="300" cy="320" rx="160" ry="100" fill="#d49f3f"/>
+  <!-- Cub body -->
+  <ellipse cx="210" cy="300" rx="60" ry="40" fill="#f0b94d" />
+  <!-- Lion face -->
+  <circle cx="300" cy="200" r="80" fill="#f9d76e"/>
+  <!-- Cub face -->
+  <circle cx="210" cy="280" r="40" fill="#f9d76e"/>
+  <!-- Lion eyes -->
+  <circle cx="270" cy="190" r="12" fill="#442c0e"/>
+  <circle cx="330" cy="190" r="12" fill="#442c0e"/>
+  <!-- Cub eyes -->
+  <circle cx="195" cy="275" r="7" fill="#442c0e"/>
+  <circle cx="225" cy="275" r="7" fill="#442c0e"/>
+  <!-- Lion nose -->
+  <ellipse cx="300" cy="225" rx="20" ry="12" fill="#7b4c1b"/>
+  <!-- Cub nose -->
+  <ellipse cx="210" cy="295" rx="10" ry="6" fill="#7b4c1b"/>
+  <!-- Mouths -->
+  <path d="M280,245 Q300,265 320,245" stroke="#7b4c1b" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M200,310 Q210,320 220,310" stroke="#7b4c1b" stroke-width="4" fill="none" stroke-linecap="round"/>
+</svg>
 
 </body>
 </html>
