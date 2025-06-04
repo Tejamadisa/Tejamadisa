@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Animals Animation</title>
+<style>
+  body {
+    background: #d0f0f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 5rem;
+    gap: 3rem;
+  }
+
+  .animal {
+    display: inline-block;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  /* Bounce animation */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+  }
+
+  /* Rotate animation */
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Float animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+  /* Shake animation */
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-10px);
+    }
+    75% {
+      transform: translateX(10px);
+    }
+  }
+
+  .dog {
+    animation-name: bounce;
+    animation-duration: 2s;
+  }
+
+  .cat {
+    animation-name: rotate;
+    animation-duration: 4s;
+  }
+
+  .bird {
+    animation-name: float;
+    animation-duration: 3s;
+  }
+
+  .fish {
+    animation-name: shake;
+    animation-duration: 1.5s;
+  }
+</style>
+</head>
+<body>
+
+<div class="animal dog" title="Dog">🐶</div>
+<div class="animal cat" title="Cat">🐱</div>
+<div class="animal bird" title="Bird">🐦</div>
+<div class="animal fish" title="Fish">🐠</div>
+
+</body>
+</html>
