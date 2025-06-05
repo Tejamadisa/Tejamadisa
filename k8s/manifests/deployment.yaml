@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lion-site static
+  labels:
+    app: lion-site static
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lion-site static
+  template:
+    metadata:
+      labels:
+        app: lion-site static
+    spec:
+      containers:
+      - name: lion-site static
+        image: lion-teja-madisa/lion-site static
+        ports:
+        - containerPort: 8080
